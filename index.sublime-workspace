@@ -1,0 +1,553 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bo",
+				"border-color"
+			],
+			[
+				"he",
+				"header"
+			],
+			[
+				"ba",
+				"background-position"
+			],
+			[
+				"c",
+				"cover"
+			],
+			[
+				"background-",
+				"background-size"
+			],
+			[
+				"h",
+				"h1"
+			],
+			[
+				"col",
+				"col-md-12"
+			],
+			[
+				"border-",
+				"border-bottom"
+			],
+			[
+				"f",
+				"font-size"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"na",
+				"nav-item"
+			],
+			[
+				"nav",
+				"nav-link"
+			],
+			[
+				"bor",
+				"border-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"fa",
+				"fa-facebook-official"
+			],
+			[
+				"li",
+				"li"
+			],
+			[
+				"head",
+				"header"
+			],
+			[
+				"t",
+				"text-decoration"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"b",
+				"blue"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"co",
+				"col-md-6"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"ban",
+				"ban-text"
+			],
+			[
+				"conta",
+				"contact"
+			],
+			[
+				"pa",
+				"placeholder"
+			],
+			[
+				"ac",
+				"action"
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"s",
+				"script"
+			],
+			[
+				"l",
+				"left"
+			],
+			[
+				"tra",
+				"transform"
+			],
+			[
+				"wh",
+				"whitesmoke"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"fon",
+				"font-style"
+			],
+			[
+				"fo",
+				"font-weight"
+			],
+			[
+				"col-",
+				"col-md-4"
+			],
+			[
+				"o",
+				"o-line"
+			],
+			[
+				"sub",
+				"sub1-r-t"
+			],
+			[
+				"sec",
+				"selected"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"bl",
+				"black"
+			],
+			[
+				"sm-",
+				"sm-r"
+			],
+			[
+				"sm",
+				"sm-r"
+			],
+			[
+				"in",
+				"fa-instagram"
+			],
+			[
+				"g",
+				"fa-telegram"
+			],
+			[
+				"tw",
+				"fa-twitter"
+			],
+			[
+				"border-top-",
+				"border-top-left-radius"
+			],
+			[
+				"bac",
+				"background-position"
+			],
+			[
+				"hea",
+				"header"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"fe",
+				"flex-basis"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"p",
+				"position"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"margin-",
+				"margin-top"
+			],
+			[
+				"w",
+				"whitesmoke"
+			],
+			[
+				"boe",
+				"border-radius"
+			],
+			[
+				"a",
+				"align-items"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"grey",
+				"dimgrey"
+			],
+			[
+				"boer",
+				"border-radius"
+			],
+			[
+				"fle",
+				"flex-basis"
+			],
+			[
+				"ta",
+				"transparent"
+			],
+			[
+				"gree",
+				"darkgreen"
+			],
+			[
+				"gre",
+				"greenyellow"
+			],
+			[
+				"lin",
+				"linear-gradient()"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"test",
+				"text-align-last"
+			],
+			[
+				"blue",
+				"darkblue"
+			],
+			[
+				"red",
+				"orangered"
+			],
+			[
+				"BO",
+				"button"
+			],
+			[
+				"colo",
+				"color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <!-- Required meta tags -->\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <!-- Bootstrap CSS -->\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">\n\n    <title>Hello, world!</title>\n  </head>\n  <body>\n    <h1>Hello, world!</h1>\n\n    <!-- Optional JavaScript; choose one of the two! -->\n\n    <!-- Option 1: Bootstrap Bundle with Popper -->\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\n\n    <!-- Option 2: Separate Popper and Bootstrap JS -->\n    <!--\n    <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js\" integrity=\"sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB\" crossorigin=\"anonymous\"></script>\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js\" integrity=\"sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13\" crossorigin=\"anonymous\"></script>\n    -->\n  </body>\n</html>",
+			"settings":
+			{
+				"buffer_size": 1328,
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					1,
+					1,
+					"paste",
+					{
+						"event":
+						{
+							"modifier_keys":
+							{
+							},
+							"x": 562.5,
+							"y": 262.5
+						}
+					},
+					"AQAAAAAAAAAAAAAAMAUAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 14 (EXAM)/css/style.css",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 14 (EXAM)/index.html",
+		"/C/Users/Rahat/OneDrive/Desktop/pixie.exe",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 12-13/css/style.css",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 12-13/index.html",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 10-11/css/style.css",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 10-11/index.html",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 03/index.html",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 01/about.html",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 07-09/css/style.css",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 07-09/index.html",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 07-09/index.html.txt",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 05/css/style.css",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 05/index.html",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 04/index.html",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 05/style.css",
+		"/C/Users/Rahat/OneDrive/Desktop/Full Stack/C 04/style.css",
+		"/C/Users/Rahat/Desktop/Full Stack/C 04/index.html",
+		"/C/Users/Rahat/Desktop/Full Stack/C 04/style.css",
+		"/C/Users/Rahat/Desktop/Full Stack/C 03/style.css",
+		"/C/Users/Rahat/Desktop/Full Stack/C 03/a2/style.css",
+		"/C/Users/Rahat/Desktop/Full Stack/C 03/a2/index.html",
+		"/C/Users/Rahat/Desktop/Full Stack/C 03/index.html",
+		"/C/Users/Rahat/Desktop/Full Stack/c02/Index.html",
+		"/C/Users/Rahat/Desktop/Full Stack/c02/Style.css",
+		"/C/Users/Rahat/Desktop/Full Stack/Class001/index.html",
+		"/C/Users/Rahat/Desktop/Full Stack/Class001/about.html",
+		"/C/Users/Rahat/Desktop/Full Stack/Class001/about.html.txt"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1328,
+								1328
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 194.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
