@@ -1,5 +1,46 @@
 <?php include "includes/header.php"; ?>
 
+<!-- creat opertion -->
+
+<?php if(isset($_POST['add_cat'])){
+
+    $cat_name = $_POST['cat-name'];
+    $cat_desc = $_POST['cat-desc'];
+
+    $creat_query = "INSERT INTO category (c_name,c_desc,c_status) VALUES ('$cat_name','$cat_desc',0)";
+    $result = mysqli_query($db, $creat_query);
+
+    if($result) {
+        header('Location: category.php');
+    } else {
+        die("Category insert error!!" . mysqli_error($db));
+    }
+ }
+
+
+// delete opertion //
+
+
+  if(isset($_GET['delete_id'])){
+
+
+    $del_id = $_GET['delete_id'];
+
+    $delete_query = "DELETE FROM category WHERE c_id ='$del_id'";
+    $result = mysqli_query($db,$delete_query);
+
+    if($result) {
+        header('Location: category.php');
+    } else {
+        die("Category delete error!!" . mysqli_error($db));
+    }
+  }
+
+
+
+?>
+
+
 <!-- partial -->
 <div class="main-panel">
     <div class="content-wrapper">
@@ -9,7 +50,7 @@
                     <div class="tab-content tab-content-basic">
                         <!--  <<----BODY-->
                         <div class="row">
-                            <div class="col-lg-5 d-flex flex-column">
+                            <div class="col-lg-4 d-flex flex-column">
                                 <div class="grid-margin stretch-card">
                                     <div class="card">
                                         <div class="card-body">
@@ -17,31 +58,141 @@
                                             <p class="card-description">
                                                 Name should be 20 Characters long!
                                             </p>
-                                            <form class="forms-sample">
+
+
+                                            <form class="forms-sample "method="POST" action="" enctype="multipart/form-data">
                                                 <div class="form-group row">
                                                     <label for="cat_name" class="col-sm-3 col-form-label">Name</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" class="form-control" id="cat-name" placeholder="name" / required="required" name="cat-name">
+                                                        <input type="text" class="form-control ca-n" id="cat-name" placeholder="Name"  required="required" name="cat-name">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-sm-4 col-form-label">Description</label>
                                                     <div class="col-sm-8">
-                                                        <textarea rows="8" name="cat-desc" class="ca">Description</textarea>
+                                                        <textarea rows="8" name="cat-desc" class="ca"  required="required">Description</textarea>
                                                     </div>
                                                 </div>
 
-                                                <button type="submit" class="btn btn-md btn-success me-2 text-light">Add</button>
+                                                <button type="submit" class="btn btn-md btn-success me-2 text-light" name="add_cat">Add</button>
                                                 <button class="btn btn-light btn-md">Cancel</button>
                                             </form>
+
+
                                         </div>
                                     </div>
+
+                                    
                                 </div>
+
+
+                               <!-- for edit any info -->
+
+                                 <?php
+
+                                 if(isset($_GET['edit_id'])){
+
+                                    $edit_id = $_GET['edit_id'];
+
+
+
+                                    // <!-- read data from DB -->
+
+
+                                                $read_query =  "SELECT * FROM category WHERE c_id ='$edit_id'";
+                                                $result = mysqli_query($db,$read_query);
+
+
+                                                while ($row =mysqli_fetch_assoc($result)) {
+                                                       $c_id     = $row['c_id'];
+                                                       $c_name   = $row['c_name'];
+                                                       $c_desc   = $row['c_desc'];
+                                                       $c_status = $row['c_status'];}
+
+
+                                                        
+                                  ?>
+
+
+                                  <div class="card mt-5">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Edit Category</h4>
+                                            <p class="card-description">
+                                                Name should be 20 Characters long!
+                                            </p>
+
+
+                                            <form class="forms-sample "method="POST" action="" enctype="multipart/form-data">
+                                                <div class="form-group row">
+                                                    <label for="edit_name" class="col-sm-3 col-form-label">Name</label>
+                                                    <div class="col-sm-9">
+                                                     <input type="text" class="form-control" id="cat_name" placeholder="Name" required="required" name="cat_name" value="<?php echo $c_name   ;?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label">Description</label>
+                                                    <div class="col-sm-8">
+                                                        <textarea rows="8" name="cat_desc" class="ca"  required="required"><?php echo $c_desc;?></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-sm-4 col-form-label">Status</label>
+                                                    <div class="col-sm-8">
+                                                        <select class="form-control" name="cat_status">
+                                                            <option value="0" <?php if ($c_status == 0)  echo 'selected'?>>Active</option>
+                                                            <option value="1" <?php if ($c_status == 1)  echo 'selected'?>>Inactive</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-md btn-success me-2 text-light" name="update_cat">Update Category</button>
+                                                <button class="btn btn-light btn-md">Cancel</button>
+                                            </form>
+
+
+                                        </div>
+                                </div>  
+                                  <?php
+
+                                  
+                                  // <!-- // Update opertion // -->
+
+
+
+if (isset($_POST['update_cat'])){
+    $cat_name = $_POST['cat_name'];
+    $cat_desc = $_POST['cat_desc'];
+    $cat_status = $_POST['cat_status'];
+
+    $update_query ="UPDATE category SET c_name='$cat_name',c_desc='$cat_desc',c_status='$cat_status' WHERE c_id='$edit_id' "; 
+
+
+     $result = mysqli_query($db,$update_query);
+
+    if($result) {
+        header('Location: category.php');
+    } else {
+        die("Category update error!!" . mysqli_error($db));
+    }
+
+
+
+
+}
+
+                                 }
+
+                                 ?>
+
+                                
+
+
                             </div>
-                            <div class="col-lg-7 d-flex flex-column">
+                            <div class="col-lg-8 d-flex flex-column">
                                 <div class="card-body">
                                     <h4 class="card-title">All Categories</h4>
-                                    <p class="card-description">Category Info<code>.table-hover</code></p>
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <thead>
@@ -53,117 +204,174 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Jacob</td>
-                                                    <td>Photoshop</td>
-                                                    <td><label class="badge badge-danger">Pending</label></td>
-                                                    <td>
-                                                        <a href=""><i class="mdi mdi-grease-pencil"></i></a>
-                                                        <a href="" class="ms-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="mdi mdi-delete text-danger"></i></a>
 
-                                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <!-- read data from DB -->
+
+
+
+                                                <?php
+
+                                                $read_query =  "SELECT * FROM category WHERE is_parent  = 0";
+                                                $result = mysqli_query($db,$read_query);
+
+
+                                                while ($row =mysqli_fetch_assoc($result)) {
+                                                       $c_id     = $row['c_id'];
+                                                       $c_name   = $row['c_name'];
+                                                       $c_desc   = $row['c_desc'];
+                                                       $c_status = $row['c_status'];
+                                                       $is_parent = $row['is_parent'];
+                                                       $parent_id = $row['parent_id'];
+                                                        ?> 
+
+
+
+                                            <tr>
+                                                    <td><?php 
+                                                    // 0 for main and 1 for sub
+
+                                                    if($is_parent == 0){
+                                                        echo $c_name;
+                                                    }else{
+                                                        echo '-'.$c_name;
+                                                      }
+
+                                                    ?></td>
+                                                    <td><?php echo $c_desc;?></td>
+                                                     <td><?php
+
+                                                         if($c_status == 0){
+                                                            echo '<label class="badge badge-success">Active</label>';
+                                                         }else{
+                                                            echo '<label class="badge badge-danger">Inactive</label>';
+
+                                                         }
+
+                                                         ?>
+                                                             
+                                                    </td> 
+                                                    <td>
+                                                        <a href="category.php?edit_id=<?php echo $c_id;?>"><i class="mdi mdi-grease-pencil"></i></a>
+                                                        <a href="" class="ms-2" type="button" data-bs-toggle="modal" data-bs-target="#delete_id<?php echo $c_id;?>"><i class="mdi mdi-delete text-danger"></i></a>
+
+
+
+
+                                                        <div class="modal fade" id="delete_id<?php echo $c_id;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
                                                                     <div class="modal-body text-center">
                                                                         <h2 class="mb-4">Are You Sure ?? <h2>
-                                                                     <button type="button" class="btn btn-md btn-danger">yes</button>
-                                                                     <button type="button" class="btn btn-md btn-success" data-bs-dismiss="modal" aria-label="Close">No</button>
+
+                                                                            <a href="category.php?delete_id=<?php echo $c_id;?>" type="button" class="btn btn-md btn-danger">yes</a>
+                                                                            <a href="" type="button" class="btn btn-md btn-success" data -bs-dismiss="modal" aria-label="Close">No</a>
+
                                                                     </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+
+
+
+
+
                                                         </div>
                                                     </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jacob</td>
-                                                    <td>Photoshop</td>
-                                                    <td><label class="badge badge-danger">Pending</label></td>
-                                                    <td>
-                                                        <a href=""><i class="mdi mdi-grease-pencil"></i></a>
-                                                        <a href="" class="ms-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="mdi mdi-delete text-danger"></i></a>
+                                            </tr> 
 
-                                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                                                <?php
+
+                                                // sub category
+                                                $read_query3 =  "SELECT * FROM category WHERE $parent_id  = $c_id";
+                                                $result3 = mysqli_query($db,$read_query3);
+
+                                                  while ($row =mysqli_fetch_assoc($result3 )) {
+                                                       $c_id     = $row['c_id'];
+                                                       $c_name   = $row['c_name'];
+                                                       $c_desc   = $row['c_desc'];
+                                                       $c_status = $row['c_status'];
+                                                       $is_parent = $row['is_parent'];
+                                                       $parent_id = $row['parent_id'];
+
+                                                                ?>
+
+                                            <tr>
+                                                    <td><?php 
+                                                    // 0 for main and 1 for sub
+
+                                                    if($is_parent == 0){
+                                                        echo $c_name;
+                                                    }else{
+                                                        echo '-'.$c_name;
+                                                      }
+
+                                                    ?></td>
+                                                    <td><?php echo $c_desc;?></td>
+                                                     <td><?php
+
+                                                         if($c_status == 0){
+                                                            echo '<label class="badge badge-success">Active</label>';
+                                                         }else{
+                                                            echo '<label class="badge badge-danger">Inactive</label>';
+
+                                                         }
+
+                                                         ?>
+                                                             
+                                                    </td> 
+                                                    <td>
+                                                        <a href="category.php?edit_id=<?php echo $c_id;?>"><i class="mdi mdi-grease-pencil"></i></a>
+                                                        <a href="" class="ms-2" type="button" data-bs-toggle="modal" data-bs-target="#delete_id<?php echo $c_id;?>"><i class="mdi mdi-delete text-danger"></i></a>
+
+
+
+
+                                                        <div class="modal fade" id="delete_id<?php echo $c_id;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
                                                                     <div class="modal-body text-center">
                                                                         <h2 class="mb-4">Are You Sure ?? <h2>
-                                                                     <button type="button" class="btn btn-md btn-danger">yes</button>
-                                                                     <button type="button" class="btn btn-md btn-success" data-bs-dismiss="modal" aria-label="Close">No</button>
-                                                                    </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jacob</td>
-                                                    <td>Photoshop</td>
-                                                    <td><label class="badge badge-danger">Pending</label></td>
-                                                    <td>
-                                                        <a href=""><i class="mdi mdi-grease-pencil"></i></a>
-                                                        <a href="" class="ms-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="mdi mdi-delete text-danger"></i></a>
 
-                                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-body text-center">
-                                                                        <h2 class="mb-4">Are You Sure ?? <h2>
-                                                                     <button type="button" class="btn btn-md btn-danger">yes</button>
-                                                                     <button type="button" class="btn btn-md btn-success" data-bs-dismiss="modal" aria-label="Close">No</button>
-                                                                    </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jacob</td>
-                                                    <td>Photoshop</td>
-                                                    <td><label class="badge badge-danger">Pending</label></td>
-                                                    <td>
-                                                        <a href=""><i class="mdi mdi-grease-pencil"></i></a>
-                                                        <a href="" class="ms-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="mdi mdi-delete text-danger"></i></a>
+                                                                            <a href="category.php?delete_id=<?php echo $c_id;?>" type="button" class="btn btn-md btn-danger">yes</a>
+                                                                            <a href="" type="button" class="btn btn-md btn-success" data -bs-dismiss="modal" aria-label="Close">No</a>
 
-                                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-body text-center">
-                                                                        <h2 class="mb-4">Are You Sure ?? <h2>
-                                                                     <button type="button" class="btn btn-md btn-danger">yes</button>
-                                                                     <button type="button" class="btn btn-md btn-success" data-bs-dismiss="modal" aria-label="Close">No</button>
                                                                     </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jacob</td>
-                                                    <td>Photoshop</td>
-                                                    <td><label class="badge badge-danger">Pending</label></td>
-                                                    <td>
-                                                        <a href=""><i class="mdi mdi-grease-pencil"></i></a>
-                                                        <a href="" class="ms-2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="mdi mdi-delete text-danger"></i></a>
 
-                                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-body text-center">
-                                                                        <h2 class="mb-4">Are You Sure ?? <h2>
-                                                                     <button type="button" class="btn btn-md btn-danger">yes</button>
-                                                                     <button type="button" class="btn btn-md btn-success" data-bs-dismiss="modal" aria-label="Close">No</button>
-                                                                    </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+
+
+
+
+
                                                         </div>
                                                     </td>
-                                                </tr>
-                                                
+                                            </tr> 
+
+
+                                                       <?php
+
+
+                                                   }
+
+
+
+                                                           
+
+
+                                                       
+                                                }
+
+                                                ?>
+
+
+
+                                            
+
+
                                             </tbody>
                                         </table>
                                     </div>
